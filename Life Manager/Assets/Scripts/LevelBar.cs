@@ -9,7 +9,6 @@ public class LevelBar : MonoBehaviour
     public Sprite sprite;
     public Color color;
     public string text;
-    public float damage;
     Image fillComponent;
     Image iconComponent;
     Text textComponent;
@@ -19,30 +18,23 @@ public class LevelBar : MonoBehaviour
     // start
     void Start()
     {
-        setChildren();
+        SetChildren();
     }
 
-    // update
-    void Update()
-    {
-        takeDamage(damage);
-    }
-
-
-    public void setMaxLevel(float maxLevel)
+    public void SetMaxLevel(float maxLevel)
     {
         slider.maxValue = maxLevel;
         slider.value = maxLevel;
     }
 
-    public void setLevel(float level)
+    public void SetLevel(float level)
     {
         slider.value = level;
         textComponent.text = text + " " + slider.value.ToString("F1") + " %";
         //Debug.Log("value: " + slider.value);
     }
 
-    void setChildren()
+    void SetChildren()
      {
         // log all children
         foreach (Transform child in transform)
@@ -68,18 +60,28 @@ public class LevelBar : MonoBehaviour
                 textComponent.text = text + " " + slider.value.ToString();
                 Debug.Log(textComponent.text);
             }
-           
         }
-
-
-
      }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        
         //Debug.Log("damage: " + damage);
-        setLevel(slider.value - damage);
+        SetLevel(slider.value - damage);
+    }
+
+    public void heal(float heal)
+    {
+        SetLevel(slider.value + heal);
+    }
+
+    bool isMediumLevel() 
+    {
+        return (slider.value < slider.maxValue * 0.75f);
+    }
+
+    bool isLowLevel()
+    {
+        return (slider.value < slider.maxValue * 0.25f);
     }
 
   
