@@ -9,6 +9,9 @@ public class LevelBar : MonoBehaviour
     public Sprite sprite;
     public Color color;
     public string text;
+    public string mediumMessage;
+    public string lowMessage;
+    public float timeDamage;
     Image fillComponent;
     Image iconComponent;
     Text textComponent;
@@ -44,21 +47,21 @@ public class LevelBar : MonoBehaviour
             {
                 fillComponent = child.GetComponent<Image>();
                 fillComponent.color = color;
-                Debug.Log(fillComponent.color);
+                //Debug.Log(fillComponent.color);
             }
             // if child is the Icon
             else if (child.name == "Icon")
             {
                 iconComponent = child.GetComponent<Image>();
                 iconComponent.sprite = sprite;
-                Debug.Log(iconComponent.sprite);
+                //Debug.Log(iconComponent.sprite);
             }
             // if child is the Text
             else if (child.name == "Text")
             {
                 textComponent = child.GetComponent<Text>();
                 textComponent.text = text + " " + slider.value.ToString();
-                Debug.Log(textComponent.text);
+                //Debug.Log(textComponent.text);
             }
         }
      }
@@ -69,19 +72,24 @@ public class LevelBar : MonoBehaviour
         SetLevel(slider.value - damage);
     }
 
-    public void heal(float heal)
+    public void TakeDamage()
+    {
+        TakeDamage(timeDamage);
+    }
+
+    public void Heal(float heal)
     {
         SetLevel(slider.value + heal);
     }
 
-    bool isMediumLevel() 
+    public bool IsMediumLevel() 
     {
-        return (slider.value < slider.maxValue * 0.75f);
+        return ((slider.value > (slider.maxValue * 0.70f) - timeDamage) && (slider.value < (slider.maxValue * 0.70f) + timeDamage) );
     }
 
-    bool isLowLevel()
+    public bool IsLowLevel()
     {
-        return (slider.value < slider.maxValue * 0.25f);
+        return ((slider.value > (slider.maxValue * 0.30f) - timeDamage) && (slider.value < (slider.maxValue * 0.30f) + timeDamage) );
     }
 
   

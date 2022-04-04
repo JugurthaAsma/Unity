@@ -230,6 +230,18 @@ PrefabInstance:
       propertyPath: damage
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: lowMessage
+      value: I fell really bad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: timeDamage
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: mediumMessage
+      value: I feel little sick
+      objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467493, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: m_Name
       value: Health bar
@@ -671,6 +683,18 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.54509807
       objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: lowMessage
+      value: I am very sleepy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: timeDamage
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: mediumMessage
+      value: I'm a little sleepy
+      objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467493, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: m_Name
       value: Sleep bar
@@ -831,6 +855,18 @@ PrefabInstance:
     - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: color.r
       value: 0.40000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: lowMessage
+      value: I'm very hungry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: timeDamage
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: mediumMessage
+      value: I'm a little bit hungry
       objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467493, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: m_Name
@@ -1056,16 +1092,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f16f46d85eb7ba1479c004b2ec0b8235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 368095660}
-  healthDamage: 0.005
-  sleepBar: {fileID: 1164048749}
-  sleepDamage: 0.001
-  foodBar: {fileID: 924201689}
-  foodDamage: 0.01
-  energyBar: {fileID: 723708203}
-  energyDamage: 0.002
-  powerBar: {fileID: 927456373}
-  powerDamage: 0.001
+  levelBars:
+  - {fileID: 368095660}
+  - {fileID: 1164048749}
+  - {fileID: 924201689}
+  - {fileID: 723708203}
+  - {fileID: 927456373}
 --- !u!1 &1540996652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1310,18 @@ PrefabInstance:
       propertyPath: color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: lowMessage
+      value: I'm exhausted
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: timeDamage
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: mediumMessage
+      value: I'm a bit tired
+      objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467493, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: m_Name
       value: Energy bar
@@ -1423,6 +1467,18 @@ PrefabInstance:
       propertyPath: color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: lowMessage
+      value: I'm feeling very weak
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: timeDamage
+      value: 0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
+      propertyPath: mediumMessage
+      value: I'm feeling a little weak
+      objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467493, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: m_Name
       value: Power bar
@@ -1453,7 +1509,7 @@ GameObject:
   - component: {fileID: 2064396161}
   - component: {fileID: 2064396160}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PlayerMessage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1511,7 +1567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: ...
 --- !u!222 &2064396161
 CanvasRenderer:
   m_ObjectHideFlags: 0
