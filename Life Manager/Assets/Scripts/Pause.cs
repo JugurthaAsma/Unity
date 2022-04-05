@@ -20,7 +20,7 @@ public class Pause : MonoBehaviour
     void Update()
     {   
         //si jappuie sur espace 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePaused)
             {
