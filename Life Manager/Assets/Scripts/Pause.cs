@@ -18,7 +18,9 @@ public class Pause : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+
+        
         //si jappuie sur espace 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -54,7 +56,9 @@ public class Pause : MonoBehaviour
 
     public void LoadMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+
 
     }
 
