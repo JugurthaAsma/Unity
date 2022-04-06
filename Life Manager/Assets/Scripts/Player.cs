@@ -6,27 +6,17 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
 
-/*
-    public LevelBar healthBar;
-    public float healthDamage;
-    public LevelBar sleepBar;
-    public float sleepDamage;
-    public LevelBar foodBar;
-    public float foodDamage;
-    public LevelBar energyBar;
-    public float energyDamage;
-    public LevelBar powerBar;
-    public float powerDamage;
-*/
     Text playerMessage;
     Queue<string> messageQueue;
+    int indexOfMainLevelBar = 0;
     public LevelBar[] levelBars;
+
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
-        //LevelBar[] levelBars = { healthBar, sleepBar, foodBar, energyBar, powerBar };
         // get text child gameobject
         playerMessage = transform.Find("PlayerMessage").GetComponent<Text>();
         messageQueue = new Queue<string>();
@@ -40,7 +30,6 @@ public class Player : MonoBehaviour
         CheckLevels();
         DisplayMessage();
     }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -51,7 +40,6 @@ public class Player : MonoBehaviour
             }
         }    
     }
-
     public void TakeTimeDamage()
     {
         foreach (LevelBar levelBar in levelBars)
@@ -59,7 +47,6 @@ public class Player : MonoBehaviour
             levelBar.TakeDamage();
         }
     }
-
     public void CheckLevels()
     {
         // iterate through all level bars
@@ -68,89 +55,20 @@ public class Player : MonoBehaviour
             CheckLevelBar(levelBar, levelBar.mediumMessage, levelBar.lowMessage);
         }
     }
-/*
-    void checkHealthLevel()
-    {
-        if (healthBar.IsMediumLevel())
-        {
-            //Debug.Log("healthBar.IsMediumLevel()");
-            playerMessage.text = "I am healthy";
-        } 
-        else if (healthBar.IsLowLevel())
-        {
-            //Debug.Log("healthBar.IsLowLevel()");
-            playerMessage.text = "I am sick";
-        }
-    }
-
-    void checkSleepLevel()
-    {
-        if (sleepBar.IsMediumLevel())
-        {
-            //Debug.Log("sleepBar.IsMediumLevel()");
-            playerMessage.text = "I am rested";
-        }
-        else if (sleepBar.IsLowLevel())
-        {
-            //Debug.Log("sleepBar.IsLowLevel()");
-            playerMessage.text = "I am tired";
-        }
-    }
-
-    void checkFoodLevel()
-    {
-        if (foodBar.IsMediumLevel())
-        {
-            //Debug.Log("foodBar.IsMediumLevel()");
-            playerMessage.text = "I am full";
-        }
-        else if (foodBar.IsLowLevel())
-        {
-            //Debug.Log("foodBar.IsLowLevel()");
-            playerMessage.text = "I am hungry";
-        }
-    }
-
-    void checkEnergyLevel()
-    {
-        if (energyBar.IsMediumLevel())
-        {
-            //Debug.Log("energyBar.IsMediumLevel()");
-            playerMessage.text = "I am energetic";
-        }
-        else if (energyBar.IsLowLevel())
-        {
-            //Debug.Log("energyBar.IsLowLevel()");
-            playerMessage.text = "I am tired";
-        }
-    }
-
-    void checkPowerLevel()
-    {
-        if (powerBar.IsMediumLevel())
-        {
-            //Debug.Log("powerBar.IsMediumLevel()");
-            playerMessage.text = "I am strong";
-        }
-        else if (powerBar.IsLowLevel())
-        {
-            //Debug.Log("powerBar.IsLowLevel()");
-            playerMessage.text = "I am weak";
-        }
-    }
-*/
     void CheckLevelBar(LevelBar levelBar, string mediumMessage, string lowMessage)
     {
         if (levelBar.IsMediumLevel())
         {
             messageQueue.Enqueue(mediumMessage);
+            levelBars[indexOfMainLevelBar].TakeDamage(levelBar.medieumDamageEffect);
         }
         else if (levelBar.IsLowLevel())
         {
             messageQueue.Enqueue(lowMessage);
+            Debug.Log(levelBars[indexOfMainLevelBar]);
+            levelBars[indexOfMainLevelBar].TakeDamage(levelBar.lowDamageEffect);
         }
     }
-
     void DisplayMessage()
     {
         if (messageQueue.Count > 0)

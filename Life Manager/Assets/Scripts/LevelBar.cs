@@ -12,6 +12,9 @@ public class LevelBar : MonoBehaviour
     public string mediumMessage;
     public string lowMessage;
     public float timeDamage;
+
+    public float medieumDamageEffect = 10;
+    public float lowDamageEffect = 100;
     Image fillComponent;
     Image iconComponent;
     Text textComponent;
