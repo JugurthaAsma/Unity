@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
         messageQueue = new Queue<string>();
         
     }
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -81,5 +80,10 @@ public class Player : MonoBehaviour
                 playerMessage.text = message;
             }
         }
+    }
+
+    public void applyItemEffect(Item item)
+    {
+        Debug.Log("applyItemEffect : " + item.itemName);
     }
 }

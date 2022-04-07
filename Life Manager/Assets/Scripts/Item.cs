@@ -8,16 +8,15 @@ public class Item : MonoBehaviour
 
     public string itemName;
     public int quantity;
-    public Sprite icon; 
+    public Sprite icon;
+    public LevelBar levelBarToHeal;
+    public int healEffect;
+    public LevelBar levelBarToDamage;
+    public int damageEffect;
+
 
     // Start is called before the first frame update
     void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         SetChildren();
     }
@@ -39,19 +38,32 @@ public class Item : MonoBehaviour
         }
      }
 
-     void setName(Transform child)
-     {
+    void setName(Transform child)
+    {
         child.GetComponent<Text>().text = quantity + " " + itemName;
         //Debug.Log(child.GetComponent<Text>().text);
 
-     }
+    }
 
-     void setIcon(Transform child)
-     {
+    void setIcon(Transform child)
+    {
 
         // set the image of button
         child.GetComponent<Image>().sprite = icon;
         //Debug.Log(icon.sprite);
-     }
+    }
 
+    public void applyLevelBarsEffect()
+    {
+
+        if (quantity > 0)
+        {
+            levelBarToHeal.Heal(healEffect);
+            levelBarToDamage.TakeDamage(damageEffect);
+            quantity--;
+        }
+    }
 }
+
+
+
