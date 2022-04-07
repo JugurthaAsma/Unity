@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Pause : MonoBehaviour
+public class Menus : MonoBehaviour
 {
     public static bool isGamePaused = false;
 
@@ -14,7 +14,6 @@ public class Pause : MonoBehaviour
     {
         ResumeGame();
     }
-
 
     // Update is called once per frame
     void Update()
@@ -36,9 +35,12 @@ public class Pause : MonoBehaviour
         
     }
 
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("Game", LoadSceneMode.Single);
+    }
 
-    
-     public void ResumeGame()
+    public void ResumeGame()
     {
         PauseMenu.SetActive(false);
         //le temps reste le meme
@@ -46,7 +48,7 @@ public class Pause : MonoBehaviour
         isGamePaused = false;
     }
 
-   void PauseGame()
+    void PauseGame()
     {   
         PauseMenu.SetActive(true);
         //le temps sarrete
@@ -56,10 +58,7 @@ public class Pause : MonoBehaviour
 
     public void LoadMenu()
     {
-        
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-
-
     }
 
     public void QuitGame()
