@@ -120,8 +120,10 @@ MonoBehaviour:
   itemName: 
   quantity: 0
   icon: {fileID: 0}
-  levelBar: {fileID: 0}
-  levelBarEffect: 0
+  levelBarToHeal: {fileID: 0}
+  healEffect: 0
+  levelBarToDamage: {fileID: 0}
+  damageEffect: 0
 --- !u!1 &3828232682976431730
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +247,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7821153678059047136}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
-        m_MethodName: applyLevelBarsEffect
+        m_MethodName: ApplyLevelBarsEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
