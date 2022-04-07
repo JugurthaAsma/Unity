@@ -95,5 +95,9 @@ public class LevelBar : MonoBehaviour
         return ((slider.value > (slider.maxValue * 0.30f) - timeDamage) && (slider.value < (slider.maxValue * 0.30f) + timeDamage) );
     }
 
+    public float getCurrentLevel()
+    {
+        return slider.value;
+    }
   
 }
