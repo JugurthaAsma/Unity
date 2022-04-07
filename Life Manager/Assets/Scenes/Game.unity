@@ -425,9 +425,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
+      propertyPath: damageEffect
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
       propertyPath: levelBarEffect
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
+      propertyPath: levelBarToDamage
+      value: 
+      objectReference: {fileID: 368095660}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9aef928287a909408d49318369fc40b, type: 3}
 --- !u!1001 &169355322
@@ -718,7 +726,7 @@ GameObject:
   - component: {fileID: 187057411}
   - component: {fileID: 187057410}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ControlPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1143,7 +1151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
       propertyPath: damageEffect
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
       propertyPath: levelBarEffect
@@ -6658,7 +6666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1429747714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7050,6 +7058,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
+      propertyPath: damageEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
       propertyPath: levelBarEffect
       value: 10
       objectReference: {fileID: 0}
@@ -7057,6 +7069,10 @@ PrefabInstance:
       propertyPath: levelBarToHeal
       value: 
       objectReference: {fileID: 924201689}
+    - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
+      propertyPath: levelBarToDamage
+      value: 
+      objectReference: {fileID: 368095660}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9aef928287a909408d49318369fc40b, type: 3}
 --- !u!1 &1497443754
@@ -9695,6 +9711,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
+      propertyPath: damageEffect
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
       propertyPath: levelBarEffect
       value: 20
       objectReference: {fileID: 0}
@@ -9702,6 +9722,10 @@ PrefabInstance:
       propertyPath: levelBarToHeal
       value: 
       objectReference: {fileID: 924201689}
+    - target: {fileID: 7821153678059047136, guid: a9aef928287a909408d49318369fc40b, type: 3}
+      propertyPath: levelBarToDamage
+      value: 
+      objectReference: {fileID: 368095660}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9aef928287a909408d49318369fc40b, type: 3}
 --- !u!1 &2112149102
