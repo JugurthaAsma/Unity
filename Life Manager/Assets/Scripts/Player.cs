@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour
 {
@@ -41,10 +43,21 @@ public class Player : MonoBehaviour
     }
     public void TakeTimeDamage()
     {
-        foreach (LevelBar levelBar in levelBars)
+        // check if the main level bar is not empty (if the player is not dead)
+        if (levelBars[indexOfMainLevelBar].getCurrentLevel() > 0)
         {
-            levelBar.TakeDamage();
+            // take time damage
+            foreach (LevelBar levelBar in levelBars)
+            {
+                levelBar.TakeDamage();
+            }
         }
+        else
+        {
+            // Game Over (player is dead)
+            GameOver();
+        }
+        
     }
     public void CheckLevels()
     {
@@ -82,8 +95,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void applyItemEffect(Item item)
+    void GameOver()
     {
-        Debug.Log("applyItemEffect : " + item.itemName);
+        Debug.Log("Game Over");
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
     }
 }
