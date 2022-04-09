@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class swipe : MonoBehaviour
 {
     public Color[] colors;
+    //partie scrollbar et boutons
     public GameObject scrollbar, imageContent;
     private float scroll_pos = 0;
     float[] pos;
@@ -82,7 +83,6 @@ public class swipe : MonoBehaviour
 
     private void GecisiDuzenle(float distance, float[] pos, Button btn)
     {
-        // btnSayi = System.Int32.Parse(btn.transform.name);
 
         for (int i = 0; i < pos.Length; i++)
         {
@@ -99,6 +99,8 @@ public class swipe : MonoBehaviour
         }
 
     }
+
+    //passe au bouton suivant et switch de card 
     public void WhichBtnClicked(Button btn)
     {
         btn.transform.name = "clicked";
