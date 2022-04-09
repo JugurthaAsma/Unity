@@ -9,7 +9,6 @@ public class StartMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
-    
     public void QuitGame()
     {
         Debug.Log("Quit");
