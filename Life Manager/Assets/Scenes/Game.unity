@@ -9888,7 +9888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: timeDamage
-      value: 0.09
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: mediumMessage
@@ -9896,11 +9896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: lowDamageEffect
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467491, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: medieumDamageEffect
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2523300920780467493, guid: ffbbc950094e1d94f98918c57343e4e5, type: 3}
       propertyPath: m_Name
