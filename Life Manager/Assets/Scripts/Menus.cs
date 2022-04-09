@@ -7,7 +7,7 @@ public class Menus : MonoBehaviour
 {
     public static bool isGamePaused = false;
 
-    public GameObject PauseMenu = null;
+    [SerializeField] GameObject PauseMenu = null;
 
 
     private void Start()
@@ -18,8 +18,9 @@ public class Menus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
-        //si j'appuie sur echap 
+        //si jappuie sur espace 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGamePaused)
@@ -41,25 +42,18 @@ public class Menus : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (PauseMenu != null)
-        {
-            PauseMenu.SetActive(false);
-            //le temps se relance
-            Time.timeScale = 1f;
-            isGamePaused = false;
-        }
-
+        PauseMenu.SetActive(false);
+        //le temps reste le meme
+        Time.timeScale = 1f;
+        isGamePaused = false;
     }
 
     void PauseGame()
     {   
-        if (PauseMenu != null)
-        {
-            PauseMenu.SetActive(true);
-            //le temps s'arrete
-            Time.timeScale = 0f;
-            isGamePaused = true;
-        }
+        PauseMenu.SetActive(true);
+        //le temps sarrete
+        Time.timeScale = 0f;
+        isGamePaused = true;
     }
 
     public void LoadMenu()
